@@ -8,15 +8,22 @@
 </head>
 <body>
     <h1>Qual tua Nascionalidade?</h1> 
-     Qual o Paìs que você mora? <input type="text" name="txtp" id="txtp">
-     <input type="button" value="pesquisar" onclick="Pesquisar()">
+     Qual o Paìs que você mora? <input type="text" name="pais" id="pais">
+     <input type="button" value="Pesquisar" onclick="clicar()">
      <div id="res">
 
      </div>
      <script>
-         function Pesquisar() {
-             var txtp = window.document.querySelector('input#txtp')
-             var res = window.document.querySelector
+         function clicar() {
+             var pais = window.document.getElementById('pais')
+             var res = window.document.getElementById ('res')
+             var nas = String(pais.value)
+             res.innerHTML = `<p>Seu Paìs de origem è ${nas}!</P>`
+                if(nas == 'Brasil') {
+                    res.innerHTML = '<p>Você é Brasileiro!</p>'
+                } else {
+                    res.innerHTML = '<p>você é Estrangeiro!</p>'
+                }
          }
      </script>
 
